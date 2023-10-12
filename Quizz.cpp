@@ -129,7 +129,7 @@ void Game2() {
 		std::cout << "Mauvaise reponse. La bonne reponse est int x; ." << std::endl;
 	}
 	// Question 3
-	std::cout << "\n Question 3: Quelle est la structure de contrôle utilisee pour executer un bloc de code " << std::endl;
+	std::cout << "\n Question 3: Quelle est la structure de controle utilisee pour executer un bloc de code " << std::endl;
 	std::cout << "1. if  " << std::endl; // Bonne reponse
 	std::cout << "2. while" << std::endl;
 	std::cout << "3. for" << std::endl;
@@ -179,97 +179,100 @@ void Game3() {
 
 	int score = 0; // Score initial
 
-	std::cout << "Bienvenue au Quizz sur le langage C !" << std::endl;
+	std::cout << "Bienvenue au Quizz sur les jeux videos !" << std::endl;
 	std::cout << "Repondez aux questions en choisissant la bonne option (1, 2 ou 3)." << std::endl;
 
 	// Question 1
-	std::cout << "\n Quelle est l'instruction en C pour afficher du texte a l'ecran? " << std::endl;
-	std::cout << "1. print(''Hello, World!'');" << std::endl;
-	std::cout << "2. echo ''Hello, World!'';" << std::endl;
-	std::cout << "3. printf(''Hello, World!'');" << std::endl; // Bonne reponse
+	std::cout << "\n  Qui est le personnage emblematique de la franchise de jeux Super Mario	 ? " << std::endl;
+	std::cout << "1. Mario" << std::endl;
+	std::cout << "2. Link" << std::endl;
+	std::cout << "3. Naruto" << std::endl; // Bonne reponse
 	int reponse1;
 	std::cin >> reponse1;
-	if (reponse1 == 3) {
+	if (reponse1 == 1) {
 		std::cout << " Bonne reponse ! " << std::endl;
 		score++;
 	}
 	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est printf(''Hello, World!'');." << std::endl;
+		std::cout << "Mauvaise reponse. La bonne reponse est Mario." << std::endl;
 	}
 
 	// Question 2
-	std::cout << "\n Question 2: Quelle est la declaration correcte d'une variable entière en C?" << std::endl;
-	std::cout << "1. integer x;" << std::endl; // Bonne reponse
-	std::cout << "2. int x; " << std::endl;
-	std::cout << "3. x = int;" << std::endl;
+	std::cout << "\n Question 2:  Quel jeu video populaire consiste a empiler des blocs pour creer des structures ?" << std::endl;
+	std::cout << "1. Roblox" << std::endl; // Bonne reponse
+	std::cout << "2. Tetris " << std::endl;
+	std::cout << "3. Minecraft" << std::endl;
 	int reponse2;
 	std::cin >> reponse2;
-	if (reponse2 == 2) {
+	if (reponse2 == 3) {
 		std::cout << "Bonne reponse !" << std::endl;
 		score++;
 	}
 	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est int x; ." << std::endl;
+		std::cout << "Mauvaise reponse. La bonne reponse est Minecraft." << std::endl;
 	}
 	// Question 3
-	std::cout << "\n Question 3: Quelle est la structure de contrôle utilisee pour executer un bloc de code " << std::endl;
-	std::cout << "1. if  " << std::endl; // Bonne reponse
-	std::cout << "2. while" << std::endl;
-	std::cout << "3. for" << std::endl;
+	std::cout << "\n Question 3: Quel jeu video de tir a la première personne met en scène des combats entre terroristes et antiterroristes ? " << std::endl;
+	std::cout << "1. Valorant  " << std::endl; // Bonne reponse
+	std::cout << "2. Conter-Strike" << std::endl;
+	std::cout << "3. Rainbow Six Siege" << std::endl;
 	int reponse3;
 	std::cin >> reponse3;
-	if (reponse3 == 1) {
+	if (reponse3 == 2) {
 		std::cout << "Bonne reponse !" << std::endl;
 		score++;
 	}
 	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est if ." << std::endl;
+		std::cout << "Mauvaise reponse. La bonne reponse est Conter-Strike." << std::endl;
 	}
 	// Question 4
-	std::cout << "\n Question 4: Quelle est la boucle la plus couramment utilisee pour repeter une partie de code un nombre specifie de fois ?" << std::endl;
-	std::cout << "1. if  " << std::endl; // Bonne reponse
-	std::cout << "2. for " << std::endl;
-	std::cout << "3. switch" << std::endl;
+	std::cout << "\n Question 4: Quel jeu video de tir a la première personne vous place dans un conflit militaire fictif entre les etats-Unis et la Russie ?" << std::endl;
+	std::cout << "1. Call of Duty: Modern Warfare" << std::endl; // Bonne reponse
+	std::cout << "2. Halo" << std::endl;
+	std::cout << "3. Metal Gear Solid" << std::endl;
 	int reponse4;
 	std::cin >> reponse4;
-	if (reponse4 == 2) {
+	if (reponse4 == 1) {
 		std::cout << "Bonne reponse !" << std::endl;
 		score++;
 	}
 	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est for." << std::endl;
+		std::cout << "Mauvaise reponse. La bonne reponse est Call of Duty: Modern Warfar." << std::endl;
 	}
 
 	// Question 5
-	std::cout << "\nQuestion 5: Quel operateur est utilise pour comparer l'egalite de deux valeurs en C ?" << std::endl;
-	std::cout << "1. =  " << std::endl;
-	std::cout << "2. ==" << std::endl; // Bonne reponse
-	std::cout << "3. ===" << std::endl;
+	std::cout << "\nQuestion 5: Dans quel jeu video incarnez-vous un garçon nomme Link, qui doit sauver la princesse Zelda ?" << std::endl;
+	std::cout << "1. CookingMama" << std::endl;
+	std::cout << "2. MarioKart" << std::endl; // Bonne reponse
+	std::cout << "3. The Legend of Zelda" << std::endl;
 	int reponse5;
 	std::cin >> reponse5;
-	if (reponse5 == 2) {
+	if (reponse5 == 3) {
 		std::cout << "Bonne reponse !" << std::endl;
 		score++;
 	}
 	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est ==." << std::endl;
+		std::cout << "Mauvaise reponse. La bonne reponse est The Legend of Zelda." << std::endl;
 	}
 
 	std::cout << "\nVotre score final est : " << score << " sur 5." << std::endl;
 
 }
+
+
+
 void Theme() {
 	std::cout << "Choisissez un des themes qui sont presents ! \n" << std::endl;
 	std::cout << "   [1] Culture general" << std::endl;
 	std::cout << "   [2] Langage C " << std::endl;
-	std::cout << "   [2] Jeux video \n" << std::endl;
+	std::cout << "   [3] Jeux video \n" << std::endl;
 
-	std::cout << "Choose an option: ";
+	std::cout << "Choose an topic: ";
 
 	int MenuChoice;
 	std::cin >> MenuChoice;
 
-	// Appelle à la fonction 
+	// Appelle a la fonction 
 
 	switch (MenuChoice)
 	{
@@ -281,12 +284,16 @@ void Theme() {
 		Game2();
 		break;
 
-	default:
+	case 3:
 		Game3();
+		break;
+
+	default :
 		break;
 	}
 
 }
+
 
 // Fonction pour quitter le jeu
 void ExitApp() {
@@ -294,19 +301,19 @@ void ExitApp() {
 	exit(0);
 }
 
-// Fonction qui sert à guider le joueur
+// Fonction qui sert a guider le joueur
 
 void MainMenu() {
 	std::cout << "----- Main Menu -----" << std::endl;
 	std::cout << "   [1] Start the game" << std::endl;
 	std::cout << "           or " << std::endl;;
 	std::cout << "   [2] Leave the game \n" << std::endl;
-	std::cout << "Choose an option: ";
+	std::cout << "Choose a option: ";
 
 	int MenuChoice;
 	std::cin >> MenuChoice;
 
-	// Appelle à la fonction 
+	// Appelle a la fonction 
 
 	switch (MenuChoice)
 	{
@@ -324,10 +331,3 @@ void MainMenu() {
 	}
 
 }
-
-
-
-
-
-
-
