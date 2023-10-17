@@ -1,425 +1,344 @@
 #include <iostream>
-#include "Quizz.h"
+#include <string>
+#include "Quiz.h"
 
+using namespace std;
 
-// Fonction Start
+int Deviner;
+int Totale;
+
+class Question {
+private:
+	string Texte_Question;
+	string Reponse_1;
+	string Reponse_2;
+	string Reponse_3;
+	string Reponse_4;
+	int Reponse_Correcte;
+	int Score_Question;
+
+public:
+	void setValues(string, string, string, string, string, int, int);
+	void askQuestion();
+
+};
 
 void Startup() {
-	std::cout << " Launche the game " << std::endl;
+	std::cout << " Lancer le jeu " << std::endl;
+}
+void Question::setValues(string q, string a1, string a2, string a3, string a4, int ca, int pa)
+{
+	Texte_Question = q;
+	Reponse_1 = a1;
+	Reponse_2 = a2;
+	Reponse_3 = a3;
+	Reponse_4 = a4;
+	Reponse_Correcte = ca;
+	Score_Question = pa;
+
+}
+
+void Question::askQuestion() {
+	cout << endl;
+	std::cout << Texte_Question << std::endl;
+	std::cout << "1. " << Reponse_1 << std::endl;
+	std::cout << "2. " << Reponse_2 << std::endl;
+	std::cout << "3. " << Reponse_3 << std::endl;
+	std::cout << "4. " << Reponse_4 << std::endl;
+	cout << endl;
+
+
+	std::cout << "Reponse: " << std::endl;
+	std::cin >> Deviner;
+
+	if (Deviner == Reponse_Correcte)
+	{
+		cout << endl;
+		std::cout << "Tres bien ! Vous avez raison." << std::endl;
+		Totale += Score_Question;
+		std::cout << "Score: " << Score_Question << " En dehors de " << Score_Question << " !" << std::endl;
+
+	}
+	else
+	{
+		cout << endl;
+		std::cout << "Oh, NON. Vous avez tort." << std::endl;
+		std::cout << "Vous gagnez 0 !" << " En dehors de " << Score_Question << " !" << std::endl;
+		std::cout << "La bonne reponse est " << Reponse_Correcte << std::endl;
+		cout << endl;
+	}
 }
 
 
 
-//Theme 1, culture general
 
-void Game1() {
-	int score = 0; // Score initial
-
-	std::cout << "Bienvenue au Quizz de Culture Generale !" << std::endl;
-	std::cout << "Repondez aux questions en choisissant la bonne option (1, 2 ou 3)." << std::endl;
-
-	while (score < 1) { // Cette boucle se répète tant que le score n'est pas supérieur ou égal à 1
-		// Question 1
-		std::cout << "\n Quel est le premier satellite envoyé dans l'espace ?" << std::endl;
-		std::cout << "1. Spoutnik 1" << std::endl;
-		std::cout << "2. Explorer 4" << std::endl;
-		std::cout << "3. la-lune" << std::endl; // Bonne réponse
-		int reponse1;
-
-		if (std::cin >> reponse1) {
-			if (reponse1 == 1) {
-				std::cout << "Bonne réponse !" << std::endl;
-				score++;
-			}
-			else if (reponse1 != 2 && reponse1 != 3) {
-				std::cout << "Mauvaise réponse.La bonne réponse est Spoutnik 1." << std::endl;
-			}
-		}
-		else {
-			std::cout << "Réponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-			std::cin.clear(); // Réinitialise l'état d'entrée
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore le reste de la ligne
-		}
-	}
-
-	// Le reste du code du quizz continue ici.
-	// Vous pouvez poser d'autres questions ou gérer le score.
-
-
-	//// Question 1
-	//std::cout << "\n Quel est le premier satellite envoyer dans l'espece " << std::endl;
-	//std::cout << "1. Spoutnik 1" << std::endl;
-	//std::cout << "2. Explorer 4" << std::endl;
-	//std::cout << "3. la-lune" << std::endl; // Bonne reponse
-	//int reponse1;
-	//if (std::cin >> reponse1) {
-	//	if (reponse1 == 1) {
-	//		std::cout << "Bonne reponse !" << std::endl;
-	//		score++;
-	//	}
-	//	else if (reponse1 != 2 && reponse1 != 3) {
-	//		std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-	//	}
-	//	else {
-	//		std::cout << "Mauvaise reponse. La bonne reponse est Spoutnik 1." << std::endl;
-	//	}
-	//}
-	//else {
-	//	std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-	//	std::cin.clear(); // Réinitialise l'état d'entrée
-	//	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore le reste de la ligne
-	//	
-	//}
-
-
-
-	// Question 2
-	std::cout << "\n Question 2: Quelle est la capital de l'australie ?" << std::endl;
-	std::cout << "1. Dublin " << std::endl; // Bonne reponse
-	std::cout << "2. Canberra " << std::endl;
-	std::cout << "3. Sydney" << std::endl;
-	int reponse2;
-	if (std::cin >> reponse2) {
-		if (reponse2 == 1) {
-			std::cout << "Bonne reponse !" << std::endl;
-			score++;
-		}
-		else if (reponse2 != 2 && reponse2 != 3) {
-			std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-		}
-		else {
-			std::cout << "Mauvaise reponse. La bonne reponse est Spoutnik 1." << std::endl;
-		}
-	}
-	else {
-		std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-		std::cin.clear(); // Réinitialise l'état d'entrée
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore le reste de la ligne
-	}
-
-
-	// Question 3
-	std::cout << "\n Question 3: Le jeu de combat le plus vendu au monde est fait par : " << std::endl;
-	std::cout << "1. Nintendo (developpeur de 'Mario')  " << std::endl; // Bonne reponse
-	std::cout << "2. Activision (developpeur de 'Call of Duty') " << std::endl;
-	std::cout << "3. EA(un des plus gros developpeurs de jeu au monde)" << std::endl;
-	int reponse3;
-	if (std::cin >> reponse3) {
-		if (reponse3 == 1) {
-			std::cout << "Bonne reponse !" << std::endl;
-			score++;
-		}
-		else if (reponse3 != 2 && reponse3 != 3) {
-			std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-		}
-		else {
-			std::cout << "Mauvaise reponse. La bonne reponse est Spoutnik 1." << std::endl;
-		}
-	}
-	else {
-		std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-		std::cin.clear(); // Réinitialise l'état d'entrée
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore le reste de la ligne
-	}
-
-	// Question 4
-	std::cout << "\n Question 4: Quel acte de la vie courante occupe environ 6 mois de notre vie ? ?" << std::endl;
-	std::cout << "1. Attendre au feu rouge  " << std::endl; // Bonne reponse
-	std::cout << "2. Passer le balai " << std::endl;
-	std::cout << "3. Regarder la television" << std::endl;
-	int reponse4;
-	if (std::cin >> reponse4) {
-		if (reponse4 == 1) {
-			std::cout << "Bonne reponse !" << std::endl;
-			score++;
-		}
-		else if (reponse4 != 2 && reponse4 != 3) {
-			std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-		}
-		else {
-			std::cout << "Mauvaise reponse. La bonne reponse est Spoutnik 1." << std::endl;
-		}
-	}
-	else {
-		std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-		std::cin.clear(); // Réinitialise l'état d'entrée
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore le reste de la ligne
-	}
-
-	// Question 5
-	std::cout << "\nQuestion 5: Quel materiau est le plus dense entre 1 kilogramme de beton et 1 kilogramme de plumes ?" << std::endl;
-	std::cout << "1. plumes  " << std::endl;
-	std::cout << "2. les deux" << std::endl; // Bonne reponse
-	std::cout << "3. beton" << std::endl;
-	int reponse5;
-	if (std::cin >> reponse5) {
-		if (reponse5 == 1) {
-			std::cout << "Bonne reponse !" << std::endl;
-			score++;
-		}
-		else if (reponse5 != 2 && reponse5 != 3) {
-			std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-		}
-		else {
-			std::cout << "Mauvaise reponse. La bonne reponse est Spoutnik 1." << std::endl;
-		}
-	}
-	else {
-		std::cout << "Reponse non valide. Choisissez 1, 2 ou 3." << std::endl;
-		std::cin.clear(); // Réinitialise l'état d'entrée
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore le reste de la ligne
-	}
-
-	std::cout << "\nVotre score final est : " << score << " sur 5." << std::endl;
+// Fonction pour quitter le jeu
+void ExitApp() {
+	std::cout << "A la prochaine." << std::endl;
 	Replay();
+	exit(0);
+}
+
+void QuestionPose1() {
+
+	Question q1;
+	Question q2;
+	Question q3;
+	Question q4;
+	Question q5;
+
+
+	q1.setValues("1.Quel est le premier satellite envoye dans l'espace ?", "Spoutnik 1", " Explorer 4", "la-lune", "La-Terre", 1, 10);
+
+	q2.setValues("2.Quelle est la capital de l'australie ?", "Dublin", "Canberra", "Paris", "Sydney", 2, 10);
+
+	q3.setValues("3.Qui a ecrit L'Odyssee", "Bart", "Emile Zola Right-left", "Homere", "Jean de la Fontaine", 3, 10);
+
+	q4.setValues("4.Quel pays est celebre pour sa Grande Muraille ?", "France", "Maroc", "Chine", "Allemagne", 3, 10);
+
+	q5.setValues("4.Qui a peint la Mona Lisa ?", "Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Rembrandt", 3, 10);
+
+	q1.askQuestion();
+	q2.askQuestion();
+	q3.askQuestion();
+	q4.askQuestion();
+	q5.askQuestion();
+	
+	system("cls");
+
+	std::cout << "Votre score Totale est de " << Totale << " points sur 150." << std::endl;
+
+	if (Totale >= 50)
+	{
+		cout << "Bravo pour avoir reussi le Quiz!!! Paser au Quiz suivant !" << endl;
+		cout << "F E L I C I T A T I O N !!!" << endl;
+		string play_again;
+		cout << "Ton choix ";
+		cin >> play_again;
+		if (play_again == "o" || play_again == "O")
+		{
+			MainMenu();
+		}
+		else
+		{
+			cout << "OK. Au revoir." << endl;
+
+		}
+	}        //end of the game
+	else
+	{
+		cout << "Passer au quiz suivant !" << endl;
+		cout << "Voulez-vous reessayer ? Oui/Non " << endl;
+		string play_again;
+		cout << "Ton choix ";
+		cin >> play_again;
+		if (play_again == "o" || play_again == "O")
+		{
+			Theme();
+		}
+		else
+		{
+			cout << "OK. Au revoir." << endl;
+			
+		}
+
+	}
+
+	system("pause");
+	
+}
+void QuestionPose2() {
+
+	Question q6;
+	Question q7;
+	Question q8;
+	Question q9;
+	Question q10;
+
+	q6.setValues("5.Which of the following correctly declares an array in C++ ?", "array{10};", "array array[10];", "int array;", "int array[10];", 4, 10);
+
+	q7.setValues("6.What is the size of wchar_t in C++?", "Based on the number of bits in the system", "2 or 4", "4", "2", 1, 10);
+
+	q8.setValues("7.Which is more effective while calling the C++ functions?", "call by object", "call by pointer", "call by value", "call by reference", 4, 10);
+
+	q9.setValues("8.Which of the following is used to terminate the function declaration in C++?", ";", "]", ")", ":", 1, 10);
+
+	q10.setValues("8.Which of the following is used to terminate the function declaration in C++?", ";", "]", ")", ":", 1, 10);
+
+	
+
+	q6.askQuestion();
+	q7.askQuestion();
+	q8.askQuestion();
+	q9.askQuestion();
+	q10.askQuestion();
+
+
+	system("cls");
+
+	std::cout << "Votre score Totale est de " << Totale << " points sur 150." << std::endl;
+
+	if (Totale >= 50)
+	{
+		cout << "Bravo pour avoir reussi le Quiz!!!" << endl;
+		cout << "F E L E C I T A T I O N !!!" << endl;
+		string play_again;
+		cout << "Ton choix ";
+		cin >> play_again;
+		if (play_again == "o" || play_again == "O")
+		{
+			MainMenu();
+		}
+		else
+		{
+			cout << "OK. Au revoir." << endl;
+
+		}
+	}        //end of the game
+	else
+	{
+		cout << "Passer au quiz suivant! !" << endl;
+		cout << "Voulez-vous reessayer ? O/N " << endl;
+		string play_again;
+		cout << "Vous avez le choix : ";
+		cin >> play_again;
+		if (play_again == "o" || play_again == "O")
+		{
+			Theme();
+		}
+		else
+		{
+			cout << "OK. Au revoir." << endl;
+
+		}
+
+	}
+
+	system("pause");
+
+}
+void QuestionPose3() {
+
+	
+	Question q11;
+	Question q12;
+	Question q13;
+	Question q14;
+	Question q15;
+
+	
+	q11.setValues("11.Quelle entreprise a cree la celebre serie de jeux Pokemon?", "l'entreprise japonaise Game Freak", "la societe  Game World Adventures.", "l'entreprise  Monstres de Poche Inc", "Bandai Namco", 1, 10);
+	q12.setValues("12.Quel jeu video populaire met en scene des animaux anthropomorphes vivant dans une ville et a ete developpe par Nintendo ?", "Super Mario World", "Zelda's Animal Town", "Animal Crossing", "Call Of Duty", 3, 10);
+	q13.setValues("13. Quel jeu video permet aux joueurs de construire des mondes virtuels avec des blocs de differentes couleurs ?", "Minecraft", "Fortnite", "Grand Theft Auto V", "Valorant", 1, 10);
+	q14.setValues("14.quel est le jeu de societe le plus ancien ?", "Monopoly", "Jurassic Park", "Senet", "Tetris", 3, 10);
+	q15.setValues("15.Lequel de ces personnages n'est pas issu de l'univers de Mario ?", "Peach", "Bowser", "Tail", "Luigi", 2, 10);
+
+	q11.askQuestion();
+	q12.askQuestion();
+	q13.askQuestion();
+	q14.askQuestion();
+	q15.askQuestion();
+
+	system("cls");
+
+	std::cout << "Ton score Totale est " << Totale << "point sur 150." << std::endl;
+
+	if (Totale >= 50)
+	{
+		cout << "Bravo pour avoir reussi le Quiz!!!" << endl;
+		cout << "F E L I C I T A T I O N !!!" << endl;
+		string play_again;
+		cout << "Ton choix ";
+		cin >> play_again;
+		if (play_again == "o" || play_again == "O")
+		{
+			MainMenu();
+		}
+		else
+		{
+			cout << "OK. Au revoir." << endl;
+
+		}
+
+	}        //end of the game
+	else
+	{
+		cout << "Terminer !" << endl;
+		cout << "Voulez-vous reessayer ? O/N " << endl;
+		string play_again;
+		cout << "Vous avez le choix : ";
+		cin >> play_again;
+		if (play_again == "o" || play_again == "O")
+		{
+			Theme();
+		}
+		else
+		{
+			cout << "OK. Au revoir !" << endl;
+
+		}
+
+	}
+
+	system("pause");
 
 }
 
-//Theme 2, langage C
-
-void Game2() {
-	int score = 0; // Score initial
-
-	std::cout << "Bienvenue au Quizz sur le langage C !" << std::endl;
-	std::cout << "Repondez aux questions en choisissant la bonne option (1, 2 ou 3)." << std::endl;
-
-	// Question 1
-	std::cout << "\n Quelle est l'instruction en C pour afficher du texte a l'ecran? " << std::endl;
-	std::cout << "1. print(''Hello, World!'');" << std::endl;
-	std::cout << "2. echo ''Hello, World!'';" << std::endl;
-	std::cout << "3. printf(''Hello, World!'');" << std::endl; // Bonne reponse
-	int reponse1;
-	std::cin >> reponse1;
-	if (reponse1 == 3) {
-		std::cout << " Bonne reponse ! " << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est printf(''Hello, World!'');." << std::endl;
-	}
-
-	// Question 2
-	std::cout << "\n Question 2: Quelle est la declaration correcte d'une variable entière en C?" << std::endl;
-	std::cout << "1. integer x;" << std::endl; // Bonne reponse
-	std::cout << "2. int x; " << std::endl;
-	std::cout << "3. x = int;" << std::endl;
-	int reponse2;
-	std::cin >> reponse2;
-	if (reponse2 == 2) {
-		std::cout << "Bonne reponse !" << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est int x; ." << std::endl;
-	}
-	// Question 3
-	std::cout << "\n Question 3: Quelle est la structure de controle utilisee pour executer un bloc de code " << std::endl;
-	std::cout << "1. if  " << std::endl; // Bonne reponse
-	std::cout << "2. while" << std::endl;
-	std::cout << "3. for" << std::endl;
-	int reponse3;
-	std::cin >> reponse3;
-	if (reponse3 == 1) {
-		std::cout << "Bonne reponse !" << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est if ." << std::endl;
-	}
-	// Question 4
-	std::cout << "\n Question 4: Quelle est la boucle la plus couramment utilisee pour repeter une partie de code un nombre specifie de fois ?" << std::endl;
-	std::cout << "1. if  " << std::endl; // Bonne reponse
-	std::cout << "2. for " << std::endl;
-	std::cout << "3. switch" << std::endl;
-	int reponse4;
-	std::cin >> reponse4;
-	if (reponse4 == 2) {
-		std::cout << "Bonne reponse !" << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est for." << std::endl;
-	}
-
-	// Question 5
-	std::cout << "\nQuestion 5: Quel operateur est utilise pour comparer l'egalite de deux valeurs en C ?" << std::endl;
-	std::cout << "1. =  " << std::endl;
-	std::cout << "2. ==" << std::endl; // Bonne reponse
-	std::cout << "3. ===" << std::endl;
-	int reponse5;
-	std::cin >> reponse5;
-	if (reponse5 == 2) {
-		std::cout << "Bonne reponse !" << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est ==." << std::endl;
-	}
-
-	std::cout << "\nVotre score final est : " << score << " sur 5." << std::endl;
-	Replay();
-}
-
-
-
-void Game3() {
-
-	int score = 0; // Score initial
-
-	std::cout << "Bienvenue au Quizz sur les jeux videos !" << std::endl;
-	std::cout << "Repondez aux questions en choisissant la bonne option (1, 2 ou 3)." << std::endl;
-
-	// Question 1
-	std::cout << "\n Question 1: Lequel de ces personnages n'est pas issu de l'univers de Mario ? " << std::endl;
-
-	std::cout << "1. Peach" << std::endl;
-	std::cout << "2. Bowser" << std::endl;
-	std::cout << "3. Tail;" << std::endl; // Bonne reponse
-	int reponse1;
-	std::cin >> reponse1;
-	if (reponse1 == 3) {
-		std::cout << " Bonne reponse ! " << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est Tails" << std::endl;
-	}
-
-	// Question 2
-	std::cout << "\n Question 2: Quelle entreprise a cree la celèbre serie de jeux Pokemon?" << std::endl;
-	std::cout << "1.  l'entreprise japonaise Game Freak" << std::endl; // Bonne reponse
-	std::cout << "2. la societe  Game World Adventures." << std::endl;
-	std::cout << "3. l'entreprise  Monstres de Poche Inc" << std::endl;
-	int reponse2;
-	std::cin >> reponse2;
-	if (reponse2 == 1) {
-		std::cout << "Bonne reponse !" << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est l'entreprise japonaise Game Freak." << std::endl;
-	}
-	// Question 3
-	std::cout << "\n Question 3: Quel jeu video populaire met en scène des animaux anthropomorphes vivant dans une ville et a ete developpe par Nintendo ? " << std::endl;
-	std::cout << "1. Super Mario World  " << std::endl; // Bonne reponse
-	std::cout << "2. Zelda's Animal Town" << std::endl;
-	std::cout << "3. Animal Crossing" << std::endl;
-	int reponse3;
-	std::cin >> reponse3;
-	if (reponse3 == 3) {
-		std::cout << "Bonne reponse !" << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est Animal Crossing ." << std::endl;
-	}
-	// Question 4
-	std::cout << "\n Question 4: Quel jeu video permet aux joueurs de construire des mondes virtuels avec des blocs de differentes couleurs ?" << std::endl;
-	std::cout << "1. Minecraft  " << std::endl; // Bonne reponse
-	std::cout << "2. Fortnite " << std::endl;
-	std::cout << "3. Grand Theft Auto V" << std::endl;
-	int reponse4;
-	std::cin >> reponse4;
-	if (reponse4 == 1) {
-		std::cout << "Bonne reponse !" << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est Minecraft." << std::endl;
-	}
-
-	// Question 5
-	std::cout << "\nQuestion 5: quel est le jeu de societe le plus ancien ?" << std::endl;
-	std::cout << "1. Monopoly  " << std::endl;
-	std::cout << "2. Jurassic Park" << std::endl; //Bonne reponse
-	std::cout << "3. Senet" << std::endl;
-	int reponse5;
-	std::cin >> reponse5;
-	if (reponse5 == 3) {
-		std::cout << "Bonne reponse !" << std::endl;
-		score++;
-	}
-	else {
-		std::cout << "Mauvaise reponse. La bonne reponse est Senet" << std::endl;
-	}
-
-	std::cout << "\nVotre score final est : " << score << " sur 5." << std::endl;
-	Replay();
-
-}
 void Theme() {
 	std::cout << "Choisissez un des themes qui sont presents ! \n" << std::endl;
 	std::cout << "   [1] Culture general" << std::endl;
 	std::cout << "   [2] Langage C " << std::endl;
 	std::cout << "   [3] Jeux video \n" << std::endl;
+	std::cout << "Choisie une option: ";
 
-	std::cout << "Choose an option: ";
+	int Menu = 3;
+	std::cin >> Menu;
 
-	int MenuChoice;
-	std::cin >> MenuChoice;
+	// Appelle � la fonction 
 
-	// Appelle à la fonction 
-
-	switch (MenuChoice)
+	switch (Menu)
 	{
 	case 1:
-		Game1();
+		QuestionPose1();
 		break;
 
 	case 2:
-		Game2();
+		QuestionPose2();
 		break;
 
 	case 3:
-		Game3();
+		QuestionPose3();
 		break;
 
-	default:
-		std::cout << "Good bye!" << std::endl;
+	default :
+		ExitApp();
 		break;
 	}
 
-}
 
-// Declarez cette fonction au debut de votre code pour la rendre accessible aux autres fonctions.
-void Replay() {
-	char choix;
-
-	printf("Do you want to replay ? (O/N) : ");
-	fflush(stdin);
-	scanf_s(" %c", &choix);
-
-	if (choix == 'O' || choix == 'o') {
-		// Si le joueur veut rejouer, appelez la fonction Game pour demarrer une nouvelle partie.
-		Theme();
-	}
-	else if (choix == 'N' || choix == 'n') {
-		printf("Thank for playing ! Good bye.\n");
-		//ExitApp(); // Vous pouvez egalement ajouter un appel à la fonction ExitApp pour quitter l'application ici.
-	}
-	else {
-		// Reponse non valide, redemandez.
-		printf("Answer incorrect. Please answer by Y(yes) or N(no)\n");
-		 // Appel recursif pour redemander la reponse.
-	}
-}
-
-
-// Fonction pour quitter le jeu
-void ExitApp() {
-	std::cout << "See you soon." << std::endl;
-	Replay();
-	exit(0);
 }
 
 // Fonction qui sert à guider le joueur
-
 void MainMenu() {
-	std::cout << "----- Main Menu -----" << std::endl;
-	std::cout << "   [1] Start the game" << std::endl;
-	std::cout << "           or " << std::endl;;
-	std::cout << "   [2] Leave the game \n" << std::endl;
-	std::cout << "Choose an option: ";
+	system("color 5F");
+	std::cout << "\t\t*************************************************************************************" << std::endl;
+	std::cout << "\t\t*****                                                                           *****" << std::endl;
+	std::cout << "\t\t*****                            BIENVENUE DANS LE QUIZ                         *****" << std::endl;
+	std::cout << "\t\t*****                          CE QUIZ PRESENTE 3 THEMES                        *****" << std::endl;
+	std::cout << "\t\t*****                                BON COURAGE                                *****" << std::endl;
+	std::cout << "\t\t*****                                                                           *****" << std::endl;
+	std::cout << "\t\t************************************************************************************* \n" << std::endl;
+
+
+	string Name;
+	std::cout << "Entre ton pseudo? " << std::endl;
+	getline(cin, Name);
+
+	std::cout << "   [1] Commencer le quiz" << std::endl;
+	std::cout << "           ou " << std::endl;;
+	std::cout << "   [2] Quitter le jeu \n" << std::endl;
+	std::cout << "Choisit une option " << Name << " ?" << std::endl;
+
 
 	int MenuChoice;
 	std::cin >> MenuChoice;
@@ -437,8 +356,30 @@ void MainMenu() {
 		break;
 
 	default:
-		std::cout << "Good bye!" << std::endl;
+		std::cout << "Au revoir !" << std::endl;
 		break;
 	}
 
+}
+// Declarez cette fonction au debut de votre code pour la rendre accessible aux autres fonctions.
+void Replay() {
+	char choix;
+
+	printf("Veux tu rejouer? (O/N) : ");
+	fflush(stdin);
+	scanf_s(" %c", &choix);
+
+	if (choix == 'O' || choix == 'o') {
+		// Si le joueur veut rejouer, appelez la fonction Game pour demarrer une nouvelle partie.
+		Theme();
+	}
+	else if (choix == 'N' || choix == 'n') {
+		printf("Merci d'avoir joue ! Au revoir.\n");
+		//ExitApp(); // Vous pouvez egalement ajouter un appel à la fonction ExitApp pour quitter l'application ici.
+	}
+	else {
+		// Reponse non valide, redemandez.
+		printf("Reponse incorrecte. Veuillez repondre par O(oui) ou N(non)\n");
+		// Appel recursif pour redemander la reponse.
+	}
 }
