@@ -117,7 +117,7 @@ void QuestionPose1() {
 		cin >> play_again;
 		if (play_again == "o" || play_again == "O")
 		{
-			MainMenu();
+			Theme();
 		}
 		else
 		{
@@ -128,7 +128,7 @@ void QuestionPose1() {
 	else
 	{
 		cout << "Passer au quiz suivant !" << endl;
-		cout << "Voulez-vous reessayer ? Oui/Non " << endl;
+		cout << "Voulez-vous reessayer ? O/N " << endl;
 		string play_again;
 		cout << "Ton choix ";
 		cin >> play_again;
