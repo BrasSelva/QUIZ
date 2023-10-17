@@ -103,51 +103,38 @@ void QuestionPose1() {
 	q3.askQuestion();
 	q4.askQuestion();
 	q5.askQuestion();
-	
+
 	system("cls");
 
 	std::cout << "Votre score Totale est de " << Totale << " points sur 150." << std::endl;
 
-	if (Totale >= 50)
+	if (Totale >= 30)
 	{
-		cout << "Bravo pour avoir reussi le Quiz!!! Paser au Quiz suivant !" << endl;
-		cout << "F E L I C I T A T I O N !!!" << endl;
-		string play_again;
-		cout << "Ton choix ";
-		cin >> play_again;
-		if (play_again == "o" || play_again == "O")
-		{
-			Theme();
-		}
-		else
-		{
-			cout << "OK. Au revoir." << endl;
+		cout << "Bien joue tu as passe le quiz!" << endl;
+		cout << "Felicitation" << endl;
 
-		}
 	}        //end of the game
 	else
 	{
-		cout << "Passer au quiz suivant !" << endl;
-		cout << "Voulez-vous reessayer ? O/N " << endl;
-		string play_again;
-		cout << "Ton choix ";
-		cin >> play_again;
-		if (play_again == "o" || play_again == "O")
-		{
-			Theme();
-		}
-		else
-		{
-			cout << "OK. Au revoir." << endl;
-			
-		}
-
+		std::cout << "Desole vous avez rate le quiz!" << std::endl;
 	}
 
-	system("pause");
-	
+	std::cout << "Veut-tu rejoue (O/N) " << std::endl;
+	string play_again;
+	std::cout << "Ton choix: ";
+	std::cin >> play_again;
+	if (play_again == "O" || play_again == "o")
+	{
+		Theme();
+
+	}
+	else
+	{
+		std::cout << "OK. Au revoir." << std::endl;
+	}
 }
 
+//Question 2 
 void QuestionPose2() {
 
 	Question q1;
@@ -196,25 +183,25 @@ void QuestionPose2() {
 	std::cin >> play_again;
 	if (play_again == "O" || play_again == "o")
 	{
-		MainMenu();
+		Theme();
 
 	}
 	else
 	{
 		std::cout << "OK. Au revoir." << std::endl;
 	}
-}	
-	
+}
+
 void QuestionPose3() {
 
-	
+
 	Question q11;
 	Question q12;
 	Question q13;
 	Question q14;
 	Question q15;
 
-	
+
 	q11.setValues("11.Quelle entreprise a cree la celebre serie de jeux Pokemon?", "l'entreprise japonaise Game Freak", "la societe  Game World Adventures.", "l'entreprise  Monstres de Poche Inc", "Bandai Namco", 1, 10);
 	q12.setValues("12.Quel jeu video populaire met en scene des animaux anthropomorphes vivant dans une ville et a ete developpe par Nintendo ?", "Super Mario World", "Zelda's Animal Town", "Animal Crossing", "Call Of Duty", 3, 10);
 	q13.setValues("13. Quel jeu video permet aux joueurs de construire des mondes virtuels avec des blocs de differentes couleurs ?", "Minecraft", "Fortnite", "Grand Theft Auto V", "Valorant", 1, 10);
@@ -231,45 +218,29 @@ void QuestionPose3() {
 
 	std::cout << "Ton score Totale est " << Totale << "point sur 150." << std::endl;
 
-	if (Totale >= 50)
+	if (Totale >= 30)
 	{
-		cout << "Bravo pour avoir reussi le Quiz!!!" << endl;
-		cout << "F E L I C I T A T I O N !!!" << endl;
-		string play_again;
-		cout << "Ton choix ";
-		cin >> play_again;
-		if (play_again == "o" || play_again == "O")
-		{
-			MainMenu();
-		}
-		else
-		{
-			cout << "OK. Au revoir." << endl;
-
-		}
-
+		cout << "Bien joue tu as passe le quiz!" << endl;
+		cout << "Felicitation" << endl;
 	}        //end of the game
 	else
 	{
-		cout << "Terminer !" << endl;
-		cout << "Voulez-vous reessayer ? O/N " << endl;
-		string play_again;
-		cout << "Vous avez le choix : ";
-		cin >> play_again;
-		if (play_again == "o" || play_again == "O")
-		{
-			Theme();
-		}
-		else
-		{
-			cout << "OK. Au revoir !" << endl;
-
-		}
-
+		std::cout << "Desole vous avez rate le quiz!" << std::endl;
 	}
 
-	system("pause");
+	std::cout << "Veut-tu rejoue (O/N) " << std::endl;
+	string play_again;
+	std::cout << "Ton choix: ";
+	std::cin >> play_again;
+	if (play_again == "O" || play_again == "o")
+	{
+		Theme();
 
+	}
+	else
+	{
+		std::cout << "OK. Au revoir." << std::endl;
+	}
 }
 
 void Theme() {
@@ -302,8 +273,6 @@ void Theme() {
 		ExitApp();
 		break;
 	}
-
-
 }
 
 // Fonction qui sert à guider le joueur
@@ -347,7 +316,6 @@ void MainMenu() {
 		std::cout << "Au revoir !" << std::endl;
 		break;
 	}
-
 }
 // Declarez cette fonction au debut de votre code pour la rendre accessible aux autres fonctions.
 void Replay() {
