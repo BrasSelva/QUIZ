@@ -88,7 +88,7 @@ void QuestionPose1() {
 	Question q5;
 
 
-	q1.setValues("1.Quel est le premier satellite envoye dans l'espace ?", "Spoutnik 1", " Explorer 4", "la-lune", "La-Terre", 1, 10);
+	q1.setValues("1.Quel est le premier satellite envoye dans l'espace ?", "Spoutnik 1", "Explorer 4", "la-lune", "La-Terre", 1, 10);
 
 	q2.setValues("2.Quelle est la capital de l'australie ?", "Dublin", "Canberra", "Paris", "Sydney", 2, 10);
 
@@ -144,7 +144,7 @@ void QuestionPose2() {
 	Question q5;
 
 
-	q1.setValues("1. Quelle est l'instruction en C pour afficher du texte a l'ecran?", "print(''Hello, World!'');", "echo ''Hello, World!'';", "printf(''Hello, World!'');","system.out.println(''Hello, World!'');", 3, 10);
+	q1.setValues("1. Quelle est l'instruction en C pour afficher du texte a l'ecran?", "print(''Hello, World!'');", "echo ''Hello, World!'';", "printf(''Hello, World!'');", "system.out.println(''Hello, World!'');", 3, 10);
 
 	q2.setValues("2.Quelle est la declaration correcte d'une variable entière en C?", "integer x", "int x", "x = int", "float x", 2, 10);
 
@@ -168,8 +168,8 @@ void QuestionPose2() {
 	{
 		cout << "Bien joue tu as passe le quiz!" << endl;
 		cout << "Felicitation" << endl;
-		
-		
+
+
 
 	}        //end of the game
 	else
@@ -269,7 +269,7 @@ void Theme() {
 		QuestionPose3();
 		break;
 
-	default :
+	default:
 		ExitApp();
 		break;
 	}
